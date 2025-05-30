@@ -1,512 +1,498 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>数据智能产运团队季度会 | 团队凝聚·共创未来</title>
-  
-  <!-- External Resources -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-      :root {
-          --primary: #6366f1;
-          --primary-dark: #4f46e5;
-          --secondary: #8b5cf6;
-          --accent: #06b6d4;
-          --success: #10b981;
-          --warning: #f59e0b;
-          --danger: #ef4444;
-          --gray-50: #f8fafc;
-          --gray-100: #f1f5f9;
-          --gray-200: #e2e8f0;
-          --gray-300: #cbd5e1;
-          --gray-400: #94a3b8;
-          --gray-500: #64748b;
-          --gray-600: #475569;
-          --gray-700: #334155;
-          --gray-800: #1e293b;
-          --gray-900: #0f172a;
-      }
-
-      * {
-          font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-      }
-
-      body {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          min-height: 100vh;
-          overflow-x: hidden;
-      }
-
-      /* 16:9 Container */
-      .aspect-16-9 {
-          aspect-ratio: 16 / 9;
-          width: 100%;
-          max-width: 1920px;
-          margin: 0 auto;
-          position: relative;
-      }
-
-      /* Glass morphism effect */
-      .glass {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      }
-
-      .glass-card {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-          from {
-              opacity: 0;
-              transform: translateY(30px);
-          }
-          to {
-              opacity: 1;
-              transform: translateY(0);
-          }
-      }
-
-      @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-      }
-
-      @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-          50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
-      }
-
-      .fade-in-up {
-          animation: fadeInUp 0.8s ease-out forwards;
-      }
-
-      .float {
-          animation: float 3s ease-in-out infinite;
-      }
-
-      .pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-      }
-
-      .stagger-1 { animation-delay: 0.1s; }
-      .stagger-2 { animation-delay: 0.2s; }
-      .stagger-3 { animation-delay: 0.3s; }
-      .stagger-4 { animation-delay: 0.4s; }
-      .stagger-5 { animation-delay: 0.5s; }
-
-      /* Hover effects */
-      .hover-lift {
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .hover-lift:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      }
-
-      /* Timeline styles */
-      .timeline-item {
-          position: relative;
-          padding-left: 2rem;
-      }
-
-      .timeline-item::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 1rem;
-          width: 12px;
-          height: 12px;
-          background: linear-gradient(135deg, var(--primary), var(--secondary));
-          border-radius: 50%;
-          border: 3px solid white;
-          box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
-      }
-
-      .timeline-item::after {
-          content: '';
-          position: absolute;
-          left: 5px;
-          top: 2rem;
-          width: 2px;
-          height: calc(100% - 1rem);
-          background: linear-gradient(to bottom, var(--primary), transparent);
-      }
-
-      .timeline-item:last-child::after {
-          display: none;
-      }
-
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-          width: 8px;
-      }
-
-      ::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-      }
-
-      ::-webkit-scrollbar-thumb {
-          background: rgba(99, 102, 241, 0.6);
-          border-radius: 4px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-          background: rgba(99, 102, 241, 0.8);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-          .aspect-16-9 {
-              aspect-ratio: auto;
-              min-height: 100vh;
-          }
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据智能产运团队Q2季度会 | 认识你真好</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+        
+        [data-theme="dark"] {
+            --text-primary: #f7fafc;
+            --text-secondary: #cbd5e0;
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --border-color: #4a5568;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .serif-font {
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-dot {
+            position: relative;
+        }
+        
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.2);
+        }
+        
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .drop-cap {
+            float: left;
+            font-size: 4rem;
+            line-height: 1;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            margin-top: -0.2rem;
+            color: #667eea;
+        }
+        
+        .mermaid {
+            background: transparent !important;
+        }
+        
+        [data-theme="dark"] .mermaid {
+            filter: invert(1) hue-rotate(180deg);
+        }
+    </style>
 </head>
-
 <body>
-  <div class="min-h-screen p-4 md:p-8">
-      <div class="aspect-16-9">
-          <!-- Header Section -->
-          <header class="relative z-10 p-6 md:p-12">
-              <div class="glass rounded-3xl p-8 md:p-12 text-center fade-in-up">
-                  <div class="flex items-center justify-center mb-6">
-                      <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4 pulse-glow">
-                          <i class="fas fa-users text-2xl text-white"></i>
-                      </div>
-                      <h1 class="text-4xl md:text-6xl font-bold text-white">
-                          数据智能产运团队季度会
-                      </h1>
-                  </div>
-                  
-                  <p class="text-xl md:text-2xl text-white/90 mb-8 font-medium">
-                      团队凝聚 · 信息同步 · 共创未来
-                  </p>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                      <div class="glass-card rounded-2xl p-6 hover-lift fade-in-up stagger-1">
-                          <i class="fas fa-map-marker-alt text-3xl text-indigo-600 mb-3"></i>
-                          <h3 class="font-semibold text-gray-800 mb-2">活动地点</h3>
-                          <p class="text-gray-600">4-204隆兴钱庄</p>
-                      </div>
-                      
-                      <div class="glass-card rounded-2xl p-6 hover-lift fade-in-up stagger-2">
-                          <i class="fas fa-calendar-alt text-3xl text-purple-600 mb-3"></i>
-                          <h3 class="font-semibold text-gray-800 mb-2">活动时间</h3>
-                          <p class="text-gray-600">6月5日下午</p>
-                      </div>
-                      
-                      <div class="glass-card rounded-2xl p-6 hover-lift fade-in-up stagger-3">
-                          <i class="fas fa-clock text-3xl text-cyan-600 mb-3"></i>
-                          <h3 class="font-semibold text-gray-800 mb-2">时长</h3>
-                          <p class="text-gray-600">14:00-18:00</p>
-                      </div>
-                  </div>
-              </div>
-          </header>
-
-          <!-- Main Content -->
-          <main class="px-6 md:px-12 pb-12">
-              <!-- Objectives Section -->
-              <section class="mb-16">
-                  <div class="glass-card rounded-3xl p-8 md:p-12 fade-in-up stagger-1">
-                      <div class="text-center mb-12">
-                          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                              <i class="fas fa-bullseye text-indigo-600 mr-3"></i>
-                              活动目标
-                          </h2>
-                          <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full"></div>
-                      </div>
-                      
-                      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                          <div class="text-center group hover-lift fade-in-up stagger-2">
-                              <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                  <i class="fas fa-users text-2xl text-white"></i>
-                              </div>
-                              <h3 class="text-xl font-semibold text-gray-800 mb-4">团队融合</h3>
-                              <p class="text-gray-600 leading-relaxed">促进团队成员了解彼此，帮助新成员和跨组同事快速融入，增强团队凝聚力和归属感</p>
-                          </div>
-                          
-                          <div class="text-center group hover-lift fade-in-up stagger-3">
-                              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                  <i class="fas fa-sync-alt text-2xl text-white"></i>
-                              </div>
-                              <h3 class="text-xl font-semibold text-gray-800 mb-4">信息同步</h3>
-                              <p class="text-gray-600 leading-relaxed">让大家清楚团队内各项目进展，提升跨团队协作与信任</p>
-                          </div>
-                          
-                          <div class="text-center group hover-lift fade-in-up stagger-4">
-                              <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                                  <i class="fas fa-birthday-cake text-2xl text-white"></i>
-                              </div>
-                              <h3 class="text-xl font-semibold text-gray-800 mb-4">温暖庆祝</h3>
-                              <p class="text-gray-600 leading-relaxed">庆祝季度生日和入职周年，传递团队温暖</p>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-
-              <!-- Schedule Section -->
-              <section class="mb-16">
-                  <div class="glass-card rounded-3xl p-8 md:p-12 fade-in-up stagger-2">
-                      <div class="text-center mb-12">
-                          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                              <i class="fas fa-calendar-check text-purple-600 mr-3"></i>
-                              详细日程安排
-                          </h2>
-                          <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-600 mx-auto rounded-full"></div>
-                      </div>
-                      
-                      <div class="max-w-5xl mx-auto">
-                          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                              <!-- Timeline Item 1 -->
-                              <div class="timeline-item fade-in-up stagger-3">
-                                  <div class="glass-card rounded-2xl p-6 hover-lift">
-                                      <div class="flex items-center justify-between mb-4">
-                                          <div class="flex items-center">
-                                              <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
-                                                  <i class="fas fa-handshake text-white"></i>
-                                              </div>
-                                              <div>
-                                                  <h3 class="text-xl font-semibold text-gray-800">破冰活动</h3>
-                                                  <p class="text-indigo-600 font-medium">14:00 - 15:00</p>
-                                              </div>
-                                          </div>
-                                          <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">60分钟</span>
-                                      </div>
-                                      <p class="text-gray-600 mb-3">让同学之间互相认识，建立连接</p>
-                                      <div class="bg-indigo-50 rounded-lg p-3">
-                                          <p class="text-sm text-gray-700"><strong>活动内容：</strong>"团队解手链" + "你画我猜"</p>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <!-- Timeline Item 2 -->
-                              <div class="timeline-item fade-in-up stagger-4">
-                                  <div class="glass-card rounded-2xl p-6 hover-lift">
-                                      <div class="flex items-center justify-between mb-4">
-                                          <div class="flex items-center">
-                                              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                                                  <i class="fas fa-microphone text-white"></i>
-                                              </div>
-                                              <div>
-                                                  <h3 class="text-xl font-semibold text-gray-800">Talk Show</h3>
-                                                  <p class="text-purple-600 font-medium">15:00 - 16:30</p>
-                                              </div>
-                                          </div>
-                                          <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">90分钟</span>
-                                      </div>
-                                      <p class="text-gray-600 mb-3">了解彼此的人设、特长、手头的工作</p>
-                                      <div class="bg-purple-50 rounded-lg p-3">
-                                          <p class="text-sm text-gray-700"><strong>流程：</strong>主管开场，成员每人2-3分钟介绍</p>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <!-- Timeline Item 3 -->
-                              <div class="timeline-item fade-in-up stagger-5">
-                                  <div class="glass-card rounded-2xl p-6 hover-lift">
-                                      <div class="flex items-center justify-between mb-4">
-                                          <div class="flex items-center">
-                                              <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
-                                                  <i class="fas fa-presentation text-white"></i>
-                                              </div>
-                                              <div>
-                                                  <h3 class="text-xl font-semibold text-gray-800">韵锦分享 + AMA</h3>
-                                                  <p class="text-cyan-600 font-medium">16:30 - 17:30</p>
-                                              </div>
-                                          </div>
-                                          <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">60分钟</span>
-                                      </div>
-                                      <p class="text-gray-600 mb-3">传递团队重点信息，解答成员关心的问题</p>
-                                      <div class="bg-cyan-50 rounded-lg p-3">
-                                          <p class="text-sm text-gray-700"><strong>内容：</strong>主题分享20分钟 + AMA问答40分钟</p>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <!-- Timeline Item 4 -->
-                              <div class="timeline-item fade-in-up stagger-5">
-                                  <div class="glass-card rounded-2xl p-6 hover-lift">
-                                      <div class="flex items-center justify-between mb-4">
-                                          <div class="flex items-center">
-                                              <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mr-4">
-                                                  <i class="fas fa-birthday-cake text-white"></i>
-                                              </div>
-                                              <div>
-                                                  <h3 class="text-xl font-semibold text-gray-800">庆祝环节</h3>
-                                                  <p class="text-orange-600 font-medium">17:30 - 18:00</p>
-                                              </div>
-                                          </div>
-                                          <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">30分钟</span>
-                                      </div>
-                                      <p class="text-gray-600 mb-3">庆祝周年、生日，增强团队归属感</p>
-                                      <div class="bg-orange-50 rounded-lg p-3">
-                                          <p class="text-sm text-gray-700"><strong>流程：</strong>照片集锦 + 切蛋糕 + 拍照</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- Dinner Section -->
-                          <div class="mt-8 text-center fade-in-up stagger-5">
-                              <div class="glass-card rounded-2xl p-6 hover-lift inline-block">
-                                  <div class="flex items-center">
-                                      <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                                          <i class="fas fa-utensils text-white"></i>
-                                      </div>
-                                      <div>
-                                          <h3 class="text-xl font-semibold text-gray-800">聚餐</h3>
-                                          <p class="text-red-600 font-medium">18:00 - 20:00 · 西溪别院</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-
-              <!-- Action Items Section -->
-              <section>
-                  <div class="glass-card rounded-3xl p-8 md:p-12 fade-in-up stagger-3">
-                      <div class="text-center mb-12">
-                          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                              <i class="fas fa-tasks text-orange-600 mr-3"></i>
-                              需要各位主管的帮助
-                          </h2>
-                          <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto rounded-full"></div>
-                      </div>
-                      
-                      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                          <div class="text-center hover-lift fade-in-up stagger-4">
-                              <div class="glass-card rounded-2xl p-6">
-                                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                      <i class="fas fa-file-powerpoint text-2xl text-white"></i>
-                                  </div>
-                                  <h3 class="text-lg font-semibold text-gray-800 mb-3">Talk Show PPT</h3>
-                                  <p class="text-gray-600 text-sm mb-4">收集团队成员的自我介绍PPT（非必须）</p>
-                                  <div class="bg-blue-50 rounded-lg p-3">
-                                      <p class="text-blue-700 font-medium text-sm">截止：6.4下班前</p>
-                                  </div>
-                              </div>
-                          </div>
-                          
-                          <div class="text-center hover-lift fade-in-up stagger-5">
-                              <div class="glass-card rounded-2xl p-6">
-                                  <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                      <i class="fas fa-question-circle text-2xl text-white"></i>
-                                  </div>
-                                  <h3 class="text-lg font-semibold text-gray-800 mb-3">AMA问题收集</h3>
-                                  <p class="text-gray-600 text-sm mb-4">让团队同学提前填写AMA问题调研问卷</p>
-                                  <div class="bg-purple-50 rounded-lg p-3">
-                                      <a href="https://survey.alibaba-inc.com/apps/zhiliao/_8WZsW4YF" target="_blank" class="text-purple-700 hover:text-purple-900 font-medium text-sm inline-flex items-center">
-                                          <i class="fas fa-external-link-alt mr-2"></i>问卷链接
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                          
-                          <div class="text-center hover-lift fade-in-up stagger-5">
-                              <div class="glass-card rounded-2xl p-6">
-                                  <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                      <i class="fas fa-heart text-2xl text-white"></i>
-                                  </div>
-                                  <h3 class="text-lg font-semibold text-gray-800 mb-3">祝福话语</h3>
-                                  <p class="text-gray-600 text-sm mb-4">为团队内生日/周年同学准备祝福话语</p>
-                                  <div class="bg-pink-50 rounded-lg p-3">
-                                      <p class="text-pink-700 font-medium text-sm">表达团队温暖</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-          </main>
-      </div>
-  </div>
-
-  <!-- Floating elements for visual interest -->
-  <div class="fixed top-20 left-10 opacity-20 pointer-events-none">
-      <div class="w-8 h-8 bg-white rounded-full float" style="animation-delay: 0s;"></div>
-  </div>
-  <div class="fixed top-40 right-20 opacity-20 pointer-events-none">
-      <div class="w-6 h-6 bg-white rounded-full float" style="animation-delay: 1s;"></div>
-  </div>
-  <div class="fixed bottom-32 left-20 opacity-20 pointer-events-none">
-      <div class="w-4 h-4 bg-white rounded-full float" style="animation-delay: 2s;"></div>
-  </div>
-
-  <script>
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute('href'));
-              if (target) {
-                  target.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                  });
-              }
-          });
-      });
-
-      // Add intersection observer for animations
-      const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.style.opacity = '1';
-                  entry.target.style.transform = 'translateY(0)';
-              }
-          });
-      }, observerOptions);
-
-      // Observe all fade-in-up elements
-      document.querySelectorAll('.fade-in-up').forEach(el => {
-          el.style.opacity = '0';
-          el.style.transform = 'translateY(30px)';
-          observer.observe(el);
-      });
-
-      // Add hover effects to cards
-      document.querySelectorAll('.hover-lift').forEach(card => {
-          card.addEventListener('mouseenter', function() {
-              this.style.transform = 'translateY(-8px)';
-          });
-          
-          card.addEventListener('mouseleave', function() {
-              this.style.transform = 'translateY(0)';
-          });
-      });
-
-      // Parallax effect for floating elements
-      window.addEventListener('scroll', () => {
-          const scrolled = window.pageYOffset;
-          const parallax = document.querySelectorAll('.float');
-          const speed = 0.5;
-
-          parallax.forEach(element => {
-              const yPos = -(scrolled * speed);
-              element.style.transform = `translate3d(0, ${yPos}px, 0)`;
-          });
-      });
-  </script>
+    <!-- Theme Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="theme-toggle" class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+        </button>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div class="absolute top-40 right-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="floating-icon mb-8">
+                <i class="fas fa-users text-6xl gradient-text"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 serif-font">
+                <span class="gradient-text">认识你真好</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl mb-8 text-gray-600 dark:text-gray-300">
+                数据智能产运团队 Q2 季度会
+            </h2>
+            <div class="flex flex-wrap justify-center gap-6 mb-12">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar-alt text-purple-600"></i>
+                    <span class="text-lg">6月5日下午</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-clock text-purple-600"></i>
+                    <span class="text-lg">14:00-18:00</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-purple-600"></i>
+                    <span class="text-lg">4-204隆兴钱庄</span>
+                </div>
+            </div>
+            <a href="#overview" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full hover:shadow-lg transform hover:scale-105 transition-all">
+                <span>探索活动详情</span>
+                <i class="fas fa-arrow-down animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 serif-font">活动目标</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">携手共进，创造更美好的团队未来</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">团队融合</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <span class="drop-cap serif-font">促</span>进团队成员了解彼此，帮助新成员和跨组同事快速融入，增强团队凝聚力和归属感。
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-sync-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">信息同步</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        让大家清楚团队内各项目进展，提升跨团队协作与信任，共同推进业务发展。
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">温暖庆祝</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        庆祝季度生日和入职周年，传递团队温暖，让每个人都感受到归属感和被重视。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Timeline Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 serif-font">活动流程</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">精心设计的每一个环节</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 to-pink-400"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="space-y-12">
+                        <!-- Item 1 -->
+                        <div class="relative flex items-start">
+                            <div class="timeline-dot ml-8"></div>
+                            <div class="ml-16 flex-1">
+                                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-2xl font-bold">破冰活动</h3>
+                                        <span class="text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">
+                                            14:00 - 15:00
+                                        </span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">让同学之间互相认识，建立连接</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="inline-flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-sm">
+                                            <i class="fas fa-link text-purple-600"></i>
+                                            团队解手链
+                                        </span>
+                                        <span class="inline-flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-sm">
+                                            <i class="fas fa-pencil-alt text-purple-600"></i>
+                                            你画我猜
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="relative flex items-start">
+                            <div class="timeline-dot ml-8"></div>
+                            <div class="ml-16 flex-1">
+                                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-2xl font-bold">Talk Show</h3>
+                                        <span class="text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">
+                                            15:00 - 16:30
+                                        </span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">了解彼此的人设、特长、手头的工作</p>
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                        <p class="text-sm"><i class="fas fa-info-circle text-blue-500 mr-2"></i>主管开场介绍，成员每人2-3分钟自我介绍</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="relative flex items-start">
+                            <div class="timeline-dot ml-8"></div>
+                            <div class="ml-16 flex-1">
+                                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-2xl font-bold">韵锦分享 + AMA</h3>
+                                        <span class="text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">
+                                            16:30 - 17:30
+                                        </span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">传递团队重点信息，解答成员关心的问题</p>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900 dark:to-pink-900 p-4 rounded-lg">
+                                            <p class="font-semibold">主题分享</p>
+                                            <p class="text-sm text-gray-600 dark:text-gray-300">20分钟</p>
+                                        </div>
+                                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900 dark:to-cyan-900 p-4 rounded-lg">
+                                            <p class="font-semibold">AMA问答</p>
+                                            <p class="text-sm text-gray-600 dark:text-gray-300">40分钟</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 4 -->
+                        <div class="relative flex items-start">
+                            <div class="timeline-dot ml-8"></div>
+                            <div class="ml-16 flex-1">
+                                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-2xl font-bold">庆祝环节</h3>
+                                        <span class="text-sm bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">
+                                            17:30 - 18:00
+                                        </span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">庆祝周年、生日，增强团队归属感</p>
+                                    <div class="flex items-center gap-4">
+                                        <i class="fas fa-birthday-cake text-3xl text-pink-500"></i>
+                                        <i class="fas fa-camera text-3xl text-purple-500"></i>
+                                        <i class="fas fa-gift text-3xl text-blue-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 5 -->
+                        <div class="relative flex items-start">
+                            <div class="timeline-dot ml-8"></div>
+                            <div class="ml-16 flex-1">
+                                <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl p-8 shadow-lg">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-2xl font-bold">团队聚餐</h3>
+                                        <span class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                                            18:00 - 20:00
+                                        </span>
+                                    </div>
+                                    <p class="mb-4">放松交流，享受美食</p>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>西溪别院 · 紫金港路21号西溪天堂商业街</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  
+    
+    <!-- Action Items Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 serif-font">主管行动清单</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">需要您的支持与配合</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-2xl p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-file-powerpoint text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">Talk Show PPT收集</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-2">收集团队成员的自我介绍PPT（非必须）</p>
+                        <p class="text-sm text-red-600 dark:text-red-400">
+                            <i class="fas fa-clock mr-1"></i>截止时间：6月4日下班前
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 rounded-2xl p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-question-circle text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">AMA问题收集</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-3">让团队同学提前填写AMA问题调研问卷</p>
+                        <a href="https://survey.alibaba-inc.com/apps/zhiliao/_8WZsW4YF" target="_blank" class="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium">
+                            <i class="fas fa-external-link-alt"></i>
+                            点击填写问卷
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-pink-50 to-pink-100 dark:from-pink-900 dark:to-pink-800 rounded-2xl p-6 flex items-start gap-4">
+                    <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-heart text-white"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">祝福话语准备</h3>
+                        <p class="text-gray-700 dark:text-gray-300">为团队内生日/周年同学准备一段温暖的祝福话语</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold gradient-text mb-2">认识你真好</h3>
+                <p class="text-gray-600 dark:text-gray-300">期待与您在季度会相见</p>
+            </div>
+            <div class="flex justify-center gap-6 text-gray-500 dark:text-gray-400">
+                <a href="#" class="hover:text-purple-600 transition-colors">
+                    <i class="fab fa-weixin text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-purple-600 transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-purple-600 transition-colors">
+                    <i class="fas fa-phone text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#5a67d8',
+                secondaryColor: '#4facfe',
+                tertiaryColor: '#f093fb'
+            }
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const theme = savedTheme || systemTheme;
+        
+        html.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards and timeline items
+        document.querySelectorAll('.card-hover, .timeline-dot').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+    
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
 </body>
 </html>
